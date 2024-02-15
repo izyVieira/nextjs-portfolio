@@ -3,7 +3,7 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
-const TAB_DATA = [
+let TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
@@ -40,11 +40,11 @@ const TAB_DATA = [
   },
 ];
 
-const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
+let AboutSection = () => {
+  let [tab, setTab] = useState("skills");
+  let [isPending, startTransition] = useTransition();
 
-  const handleTabChange = (id) => {
+  let handleTabChange = (id) => {
     startTransition(() => {
       setTab(id);
     });
